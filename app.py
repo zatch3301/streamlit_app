@@ -45,8 +45,16 @@ def detect_img(image):
 
 
 def face_rec():
-    st.write("Go to the About section from the sidebar to learn more about it.")
+    st.write('''**Face Recognition**
+
+Detect the number of faces from the uploaded picture.
+        ''')
     image_file = st.file_uploader("Upload image", type=['jpeg', 'png', 'jpg', 'webp'])
+    st.markdown('''
+            <style> body{ 
+                    color: #565555;
+                    background-color: #30555a87;
+                }</style>''',unsafe_allow_html=True)
 
     if image_file is not None:
         image = Image.open(image_file)
@@ -59,6 +67,11 @@ def face_rec():
 def text_rec():
     st.write("Convert image to text using pytesseract")
     image_file = st.file_uploader("Upload image", type=['jpeg', 'png', 'jpg', 'webp'])
+    st.markdown('''
+            <style> body{ 
+                        color: #5a5759;
+                        background-color: #5fc1bb;
+                }</style>''',unsafe_allow_html=True)
 
     if image_file is not None:
 
@@ -72,6 +85,7 @@ def text_rec():
 
 
 def about():
+
     st.write(
         '''
         **Haar Cascade** is an object detection algorithm.
@@ -86,17 +100,43 @@ _The algorithm has four stages: _
 
 Read more : https://github.com/zatch3301
         ''')
+    st.markdown('''
+            <style> body{ 
+                        color: #f3f0f0;
+                        background-color: #3c3c3c;
+                }</style>''',unsafe_allow_html=True)
 
+image = Image.open('bg.png')
 
 def main():
-    st.title("")
-    st.write()
-
+    st.title("Half-Exploit :octopus:")  
+    stt.set_theme({'primary': '#32a877'})   
     activities = ["Home", "Face Recognition", "Img OCR", "About"]
     choice = st.sidebar.selectbox("Modules", activities)
+    hide_streamlit_style = """
+            <title> Half Explot </title>
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            .sidebar .sidebar-content {background-image: linear-gradient(180deg,#4CA1AF,#2c3e50);}
+            .btn-outline-secondary {
+            border-color: #09ab3b85;
+            color: #f9f9f9;
+            }
+            </style>
+            """
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
     if choice == "Home":
-        st.write("Home Page")
+        st.write("**by _zatch_**")
+        st.markdown('''<h3 style align = "center"><i>Welcome to Hexa-Exploit one solution for all</i></h3>
+            <style> body{ 
+                    color: #efefef;
+                    background-color: #676a75;
+                }
+                </style>''',unsafe_allow_html=True)
+        st.image(image, caption='Sunrise by the mountains',use_column_width=True)
+        st.write("Go to the About section from the sidebar to learn more about it.")
     elif choice == "Face Recognition":
         face_rec()
     elif choice == "Img OCR":
