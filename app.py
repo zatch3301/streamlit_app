@@ -110,7 +110,6 @@ image = Image.open('bg.png')
 
 def main():
     st.title("Half-Exploit :octopus:")  
-    stt.set_theme({'primary': '#32a877'})   
     activities = ["Home", "Face Recognition", "Img OCR", "About"]
     choice = st.sidebar.selectbox("Modules", activities)
     hide_streamlit_style = """
