@@ -134,7 +134,7 @@ def main():
                     background-color: #676a75;
                 }
                 </style>''',unsafe_allow_html=True)
-        st.image(image, caption='Sunrise by the mountains',use_column_width=True)
+        st.image(image, caption='Nezukooo chaaaaa',use_column_width=True)
         st.write("Go to the About section from the sidebar to learn more about it.")
     elif choice == "Face Recognition":
         face_rec()
